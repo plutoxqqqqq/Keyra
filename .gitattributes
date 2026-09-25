@@ -1,0 +1,30 @@
+# Keep every text file as LF *inside the repository*.
+#
+# This project is authored on Windows and built on macOS. Without this, Git for
+# Windows would store CRLF, and every `Scripts/*.sh` would fail on the runner with
+# cryptic errors such as `/bin/bash^M: bad interpreter` or
+# `$'\r': command not found`.
+#
+# `text=auto  eol=lf` normalises on commit (CRLF in the working tree is fine on
+# Windows) and always checks out LF, so the files behave identically on both
+# platforms and the generated .xcodeproj never shows a spurious diff.
+
+* text=auto eol=lf
+
+# Binary files must never be touched by the text conversion.
+*.png binary
+*.ipa binary
+*.xcarchive binary
+*.dSYM binary
+
+# Explicit, in case a clone has unusual autocrlf settings.
+*.sh  text eol=lf
+*.py  text eol=lf
+*.swift text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.plist text eol=lf
+*.entitlements text eol=lf
+*.pbxproj text eol=lf
+*.xcconfig text eol=lf
+*.md text eol=lf

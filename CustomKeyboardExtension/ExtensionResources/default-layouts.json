@@ -1,0 +1,74 @@
+{
+  "app" : "Keyra",
+  "exportedAt" : "2026-01-01T00:00:00Z",
+  "keyraFormatVersion" : 1,
+  "kind" : "layout",
+  "layout" : {
+    "id" : "7B1C9E52-3A4D-4F0B-9C21-5E6D7A8B9C01",
+    "name" : "Keyra Fallback",
+    "notes" : "Shipped fallback keyboard. Used only if the compiled defaults are unavailable, for example after an unexpected bundle problem.",
+    "rows" : [
+      {
+        "height" : 1,
+        "keys" : [
+          { "label" : "q", "action" : { "type" : "insertText", "text" : "q" }, "shiftOutput" : "Q", "width" : 1, "height" : 1 },
+          { "label" : "w", "action" : { "type" : "insertText", "text" : "w" }, "shiftOutput" : "W", "width" : 1, "height" : 1 },
+          { "label" : "e", "action" : { "type" : "insertText", "text" : "e" }, "shiftOutput" : "E", "width" : 1, "height" : 1,
+            "longPress" : [
+              { "label" : "é", "action" : { "type" : "insertText", "text" : "é" } },
+              { "label" : "è", "action" : { "type" : "insertText", "text" : "è" } },
+              { "label" : "ê", "action" : { "type" : "insertText", "text" : "ê" } }
+            ] },
+          { "label" : "r", "action" : { "type" : "insertText", "text" : "r" }, "shiftOutput" : "R", "width" : 1, "height" : 1 },
+          { "label" : "t", "action" : { "type" : "insertText", "text" : "t" }, "shiftOutput" : "T", "width" : 1, "height" : 1 },
+          { "label" : "y", "action" : { "type" : "insertText", "text" : "y" }, "shiftOutput" : "Y", "width" : 1, "height" : 1 },
+          { "label" : "u", "action" : { "type" : "insertText", "text" : "u" }, "shiftOutput" : "U", "width" : 1, "height" : 1 },
+          { "label" : "i", "action" : { "type" : "insertText", "text" : "i" }, "shiftOutput" : "I", "width" : 1, "height" : 1 },
+          { "label" : "o", "action" : { "type" : "insertText", "text" : "o" }, "shiftOutput" : "O", "width" : 1, "height" : 1 },
+          { "label" : "p", "action" : { "type" : "insertText", "text" : "p" }, "shiftOutput" : "P", "width" : 1, "height" : 1 }
+        ]
+      },
+      {
+        "height" : 1,
+        "keys" : [
+          { "label" : "a", "action" : { "type" : "insertText", "text" : "a" }, "shiftOutput" : "A", "width" : 1, "height" : 1 },
+          { "label" : "s", "action" : { "type" : "insertText", "text" : "s" }, "shiftOutput" : "S", "width" : 1, "height" : 1 },
+          { "label" : "d", "action" : { "type" : "insertText", "text" : "d" }, "shiftOutput" : "D", "width" : 1, "height" : 1 },
+          { "label" : "f", "action" : { "type" : "insertText", "text" : "f" }, "shiftOutput" : "F", "width" : 1, "height" : 1 },
+          { "label" : "g", "action" : { "type" : "insertText", "text" : "g" }, "shiftOutput" : "G", "width" : 1, "height" : 1 },
+          { "label" : "h", "action" : { "type" : "insertText", "text" : "h" }, "shiftOutput" : "H", "width" : 1, "height" : 1 },
+          { "label" : "j", "action" : { "type" : "insertText", "text" : "j" }, "shiftOutput" : "J", "width" : 1, "height" : 1 },
+          { "label" : "k", "action" : { "type" : "insertText", "text" : "k" }, "shiftOutput" : "K", "width" : 1, "height" : 1 },
+          { "label" : "l", "action" : { "type" : "insertText", "text" : "l" }, "shiftOutput" : "L", "width" : 1, "height" : 1 }
+        ]
+      },
+      {
+        "height" : 1,
+        "keys" : [
+          { "label" : "⇧", "action" : { "type" : "shift" }, "width" : 1.5, "height" : 1, "isSpecial" : true, "accessibilityLabel" : "Shift" },
+          { "label" : "z", "action" : { "type" : "insertText", "text" : "z" }, "shiftOutput" : "Z", "width" : 1, "height" : 1 },
+          { "label" : "x", "action" : { "type" : "insertText", "text" : "x" }, "shiftOutput" : "X", "width" : 1, "height" : 1 },
+          { "label" : "c", "action" : { "type" : "insertText", "text" : "c" }, "shiftOutput" : "C", "width" : 1, "height" : 1 },
+          { "label" : "v", "action" : { "type" : "insertText", "text" : "v" }, "shiftOutput" : "V", "width" : 1, "height" : 1 },
+          { "label" : "b", "action" : { "type" : "insertText", "text" : "b" }, "shiftOutput" : "B", "width" : 1, "height" : 1 },
+          { "label" : "n", "action" : { "type" : "insertText", "text" : "n" }, "shiftOutput" : "N", "width" : 1, "height" : 1 },
+          { "label" : "m", "action" : { "type" : "insertText", "text" : "m" }, "shiftOutput" : "M", "width" : 1, "height" : 1 },
+          { "label" : "⌫", "action" : { "type" : "backspace" }, "width" : 1.5, "height" : 1, "isSpecial" : true, "repeatsWhenHeld" : true, "accessibilityLabel" : "Backspace" }
+        ]
+      },
+      {
+        "height" : 1.15,
+        "keys" : [
+          { "label" : "◀", "action" : { "type" : "cursorLeft" }, "width" : 1.2, "height" : 1, "isSpecial" : true, "repeatsWhenHeld" : true, "accessibilityLabel" : "Move cursor left" },
+          { "label" : "🌐", "action" : { "type" : "nextKeyboard" }, "width" : 1.2, "height" : 1, "isSpecial" : true, "accessibilityLabel" : "Next Keyboard" },
+          { "label" : "space", "action" : { "type" : "space" }, "width" : 4, "height" : 1, "isSpecial" : true, "accessibilityLabel" : "Space",
+            "longPress" : [
+              { "label" : "→", "action" : { "type" : "cursorMoveByOffset", "offset" : 1 } },
+              { "label" : "←", "action" : { "type" : "cursorMoveByOffset", "offset" : -1 } }
+            ] },
+          { "label" : "return", "action" : { "type" : "newline" }, "width" : 1.8, "height" : 1, "isSpecial" : true, "accessibilityLabel" : "Return" }
+        ]
+      }
+    ]
+  }
+}

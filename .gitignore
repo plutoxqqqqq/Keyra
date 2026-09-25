@@ -1,0 +1,32 @@
+# ---- Keyra / Xcode -------------------------------------------------------
+build/
+Build/
+DerivedData/
+*.xcarchive
+*.ipa
+*.dSYM
+*.xcuserdatad/
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa.tmp
+
+# ---- Python (scripts are stdlib-only, no venv expected) -----------------
+__pycache__/
+*.pyc
+
+# ---- Secrets: MUST never be committed -----------------------------------
+*.p12
+*.mobileprovision
+*.cer
+*.pem
+*.key
+*.provisionprofile
+Secrets/
+.env
+.env.*
+
+# ---- Local tooling state ------------------------------------------------
+.freebuff/
+.DS_Store
+Thumbs.db

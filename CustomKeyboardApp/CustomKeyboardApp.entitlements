@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Shared container with the keyboard extension. The identifier must match
+	  the extension's entitlements exactly; it is defined once in
+	  Config/Keyra.xcconfig and expanded here at build time.
+	-->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>$(KEYRA_SHARED_CONTAINER_ID)</string>
+	</array>
+</dict>
+</plist>

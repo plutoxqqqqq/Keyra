@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Shared container with the host app. Keyboard extensions need
+	  "Allow Full Access" at runtime in addition to this entitlement, and the
+	  identifier must exist in the provisioning profile used to sign it
+	  (SideStore applies it when "App Groups" is enabled for the app).
+	-->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>$(KEYRA_SHARED_CONTAINER_ID)</string>
+	</array>
+</dict>
+</plist>

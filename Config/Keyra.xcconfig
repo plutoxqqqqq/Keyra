@@ -1,0 +1,37 @@
+// ---------------------------------------------------------------------------
+//  Keyra.xcconfig — the single place to edit identity / signing values.
+//
+//  Both targets (host app + keyboard extension) include this file, and the
+//  Info.plist / entitlements files reference these variables with $(...),
+//  so changing them here keeps the whole project consistent.
+//
+//  After changing KEYRA_BUNDLE_PREFIX or KEYRA_SHARED_CONTAINER_ID run:
+//      python Scripts/validate_project.py
+//  to prove that the project, plists and entitlements still agree.
+// ---------------------------------------------------------------------------
+
+// Reverse-DNS prefix owned by you.  Change this before you sideload.
+KEYRA_BUNDLE_PREFIX = com.keyra
+
+// Host app / keyboard extension bundle identifiers (the extension ID must be
+// prefixed by the host app ID, as Apple requires for app extensions).
+KEYRA_APP_BUNDLE_ID = $(KEYRA_BUNDLE_PREFIX).CustomKeyboard
+KEYRA_EXTENSION_BUNDLE_ID = $(KEYRA_APP_BUNDLE_ID).Keyboard
+
+// App Group shared container used to move the keyboard configuration from the
+// host app to the keyboard extension.  It is declared in both .entitlements
+// files and is also injected into both Info.plists so the runtime code reads
+// the exact same string that was signed.
+KEYRA_SHARED_CONTAINER_ID = group.$(KEYRA_APP_BUNDLE_ID)
+
+// Optional: put your Apple Developer Team ID here if you ever build signed
+// builds in CI (SideStore does NOT need it — SideStore signs on-device).
+KEYRA_DEVELOPMENT_TEAM =
+
+// Names shown under Settings → General → Keyboard → Keyboards.
+KEYRA_DISPLAY_NAME = Keyra
+KEYRA_KEYBOARD_DISPLAY_NAME = Keyra
+
+// Human readable version numbers (also used by the CI version stamp).
+KEYRA_MARKETING_VERSION = 1.0
+KEYRA_BUILD_NUMBER = 1
