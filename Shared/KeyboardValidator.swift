@@ -72,11 +72,11 @@ enum KeyboardLimits {
     static let maxLayouts = 40
     static let maxThemes = 40
     static let minKeyWidthWeight = 0.15
-    static let maxKeyWidthWeight = 40
+    static let maxKeyWidthWeight = 40.0
     static let minKeyHeightWeight = 0.4
-    static let maxKeyHeightWeight = 4
+    static let maxKeyHeightWeight = 4.0
     static let minRowHeightWeight = 0.4
-    static let maxRowHeightWeight = 6
+    static let maxRowHeightWeight = 6.0
     static let maxTextLength = 4096
     static let maxLongPressAlternates = 12
 }
@@ -178,7 +178,7 @@ enum KeyboardValidator {
             issues.append(KeyboardIssue(
                 severity: .warning,
                 title: "Active keyboard was missing",
-                detail: "Switched to “\(working.activeLayout?.name ?? "Starter")”."
+                detail: "Switched to “\(working.activeLayout.name)”."
             ))
         }
 

@@ -177,7 +177,7 @@ class Project:
             inner = ", ".join(self.quote(item) for item in value)
             return f"({inner})"
         text = str(value)
-        safe = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_./$@"
+        safe = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_./"
         if text == "" or any(char not in safe for char in text):
             escaped = text.replace("\\", "\\\\").replace('"', '\\"')
             return f'"{escaped}"'

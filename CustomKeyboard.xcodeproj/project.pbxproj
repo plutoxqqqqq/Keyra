@@ -857,7 +857,7 @@
 				CURRENT_PROJECT_VERSION = "$(KEYRA_BUILD_NUMBER)";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CustomKeyboardExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", @executable_path/Frameworks, @executable_path/../../Frameworks);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = "$(KEYRA_MARKETING_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEYRA_EXTENSION_BUNDLE_ID)";
 				PRODUCT_MODULE_NAME = CustomKeyboardExtension;
@@ -878,7 +878,7 @@
 				CURRENT_PROJECT_VERSION = "$(KEYRA_BUILD_NUMBER)";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CustomKeyboardExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", @executable_path/Frameworks, @executable_path/../../Frameworks);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = "$(KEYRA_MARKETING_VERSION)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEYRA_EXTENSION_BUNDLE_ID)";
 				PRODUCT_MODULE_NAME = CustomKeyboardExtension;
