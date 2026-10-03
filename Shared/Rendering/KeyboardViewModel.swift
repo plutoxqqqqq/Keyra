@@ -151,7 +151,7 @@ final class KeyboardViewModel: ObservableObject {
     func pressEnded(_ key: KeyboardKey) {
         let now = clock()
         var released: [PressEvent] = []
-        if let active = interaction, active.key.id == key.id {
+        if var active = interaction, active.key.id == key.id {
             released = active.release(at: now)
         }
         interaction = nil

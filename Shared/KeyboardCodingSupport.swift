@@ -9,7 +9,7 @@ extension KeyedDecodingContainer {
     /// Returns the decoded value, or `fallback` when the key is missing,
     /// `null`, or of an unexpected type.
     func keyraValue<T: Decodable>(_ key: Key, _ fallback: T) -> T {
-        if let decoded = try? decodeIfPresent(T.self, forKey: key), let value = decoded {
+        if let value = try? decodeIfPresent(T.self, forKey: key) {
             return value
         }
         return fallback
@@ -26,10 +26,10 @@ extension KeyedDecodingContainer {
     /// Reads a numeric value that may have been written as a number or as a
     /// string (e.g. `"width": "1.5"`).
     func keyraDouble(_ key: Key, _ fallback: Double) -> Double {
-        if let value = try? decodeIfPresent(Double.self, forKey: key), let number = value {
+        if let number = try? decodeIfPresent(Double.self, forKey: key) {
             return number
         }
-        if let value = try? decodeIfPresent(String.self, forKey: key), let string = value {
+        if let string = try? decodeIfPresent(String.self, forKey: key) {
             if let number = Double(string.trimmingCharacters(in: .whitespaces)) {
                 return number
             }
@@ -39,13 +39,13 @@ extension KeyedDecodingContainer {
 
     /// Reads an integer that may have been written as a number or a string.
     func keyraInt(_ key: Key, _ fallback: Int) -> Int {
-        if let value = try? decodeIfPresent(Int.self, forKey: key), let number = value {
+        if let number = try? decodeIfPresent(Int.self, forKey: key) {
             return number
         }
-        if let value = try? decodeIfPresent(Double.self, forKey: key), let number = value {
+        if let number = try? decodeIfPresent(Double.self, forKey: key) {
             return Int(number)
         }
-        if let value = try? decodeIfPresent(String.self, forKey: key), let string = value {
+        if let string = try? decodeIfPresent(String.self, forKey: key) {
             if let number = Int(string.trimmingCharacters(in: .whitespaces)) {
                 return number
             }
@@ -55,13 +55,13 @@ extension KeyedDecodingContainer {
 
     /// Reads a boolean that may have been written as `true`, `"true"`, or `1`.
     func keyraBool(_ key: Key, _ fallback: Bool) -> Bool {
-        if let value = try? decodeIfPresent(Bool.self, forKey: key), let flag = value {
+        if let flag = try? decodeIfPresent(Bool.self, forKey: key) {
             return flag
         }
-        if let value = try? decodeIfPresent(Int.self, forKey: key), let number = value {
+        if let number = try? decodeIfPresent(Int.self, forKey: key) {
             return number != 0
         }
-        if let value = try? decodeIfPresent(String.self, forKey: key), let string = value {
+        if let string = try? decodeIfPresent(String.self, forKey: key) {
             switch string.trimmingCharacters(in: .whitespaces).lowercased() {
             case "true", "yes", "1": return true
             case "false", "no", "0": return false
@@ -74,10 +74,10 @@ extension KeyedDecodingContainer {
     /// Reads a UUID that may be missing (a fresh one is generated) or malformed
     /// (a fresh one is generated as well — duplicate ids are repaired later).
     func keyraUUID(_ key: Key) -> UUID {
-        if let value = try? decodeIfPresent(UUID.self, forKey: key), let identifier = value {
+        if let identifier = try? decodeIfPresent(UUID.self, forKey: key) {
             return identifier
         }
-        if let value = try? decodeIfPresent(String.self, forKey: key), let string = value,
+        if let string = try? decodeIfPresent(String.self, forKey: key),
            let identifier = UUID(uuidString: string.trimmingCharacters(in: .whitespaces)) {
             return identifier
         }
@@ -86,10 +86,10 @@ extension KeyedDecodingContainer {
 
     /// Reads a UUID encoded as a plain string, returning `nil` if unusable.
     func keyraOptionalUUID(_ key: Key) -> UUID? {
-        if let value = try? decodeIfPresent(UUID.self, forKey: key), let identifier = value {
+        if let identifier = try? decodeIfPresent(UUID.self, forKey: key) {
             return identifier
         }
-        if let value = try? decodeIfPresent(String.self, forKey: key), let string = value {
+        if let string = try? decodeIfPresent(String.self, forKey: key) {
             return UUID(uuidString: string.trimmingCharacters(in: .whitespaces))
         }
         return nil
@@ -97,7 +97,7 @@ extension KeyedDecodingContainer {
 
     /// Reads an optional non-empty string (empty strings are treated as absent).
     func keyraNonEmptyString(_ key: Key) -> String? {
-        guard let value = try? decodeIfPresent(String.self, forKey: key), let string = value else {
+        guard let string = try? decodeIfPresent(String.self, forKey: key) else {
             return nil
         }
         return string.isEmpty ? nil : string
