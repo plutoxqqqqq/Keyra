@@ -247,7 +247,7 @@ final class AppStore: ObservableObject {
 
     @discardableResult
     func duplicateRow(_ rowID: UUID, in layoutID: UUID) -> UUID? {
-        guard let layout = configuration.layout(layoutID),
+        guard let layout = configuration.layout(withID: layoutID),
               let row = layout.row(withID: rowID) else { return nil }
         let copy = row.duplicated()
         update { configuration in

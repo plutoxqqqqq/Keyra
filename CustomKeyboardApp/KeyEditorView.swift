@@ -318,7 +318,7 @@ struct KeyEditorView: View {
                 .foregroundColor(.secondary)
 
         case .cursorMoveByOffset(let offset):
-            Stepper(value: cursorOffsetBinding(current: offset), in: -50...50) {
+            Stepper(value: cursorOffsetBinding, in: -50...50) {
                 Text("Move the caret by \(offset) character\(abs(offset) == 1 ? "" : "s")")
             }
             Text("iOS may ignore very large jumps; Keyra keeps the request within the range UITextDocumentProxy supports.")
